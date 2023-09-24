@@ -12,7 +12,7 @@ pool = urllib3.HTTPSConnectionPool('threatfox-api.abuse.ch', port=443, maxsize=5
 
 data = {
     'query':            'search_ioc',
-    'search_term':      sys.argv[1]
+    'search_term':      int(sys.argv[1])
 }
 json_data = json.dumps(data)
 response = pool.request("POST", "/api/v1/", body=json_data)
